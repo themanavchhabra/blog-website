@@ -1,0 +1,14 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "package.json file for blog site, primarily to use froala rich text editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manav",
+  "license": "ISC",
+  "dependencies": {
+    "froala-editor": "^3.2.1"
+  }
+}
