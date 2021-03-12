@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Filtered {% endblock %}
+
+{% block body %} 
+
+<h2>Latest blog posts in :</h2><br><br>
+
+{% for post in object_list %}
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="card-title">{{ post.blogtitle }}</h2>
+        <p class="card-text text-muted h6">{{ post.blogname }} | {{ post.blogcreated_on }}</p>
+        <p class="card-text">{{ post.blogcontent|slice:":200" }}</p>
+        <a href="{% url 'blogpage' post.blogslug %}" class="btn btn-primary">View more</a>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

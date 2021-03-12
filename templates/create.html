@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} CREATE {% endblock %}
+
+{% block body %}
+
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
+
+<h2>Create post</h2> <br>
+<form method="POST" accept-charset="utf-8">
+    {% csrf_token %}
+    <label for="title">Title:</label><br>
+    <input type="text" name="title" placeholder="Title"><br><br>
+    <label for="slug">Slug:</label><br>
+    <input type="text" maxlength="200" name="slug" placeholder="Slug"><br><br>
+    <label for="content">Content:</label><br>
+    <!--<textarea name="content" placeholder="Content" rows="10" cols="50"></textarea>-->
+    <textarea id="example" name="content"></textarea>
+    <label for="type">Post type:</label>
+    <select name="type">
+        <option value="poem">Poem</option>
+        <option value="story">Story</option>
+        <option value="article">Article</option>
+        <option value="experiences">Experiences</option>
+    </select><br><br>
+    <label for="name">Name:</label><br>
+    <input type="name" name="name" placeholder="Name"><br><br>
+    <button type="submit" class="btn btn-primary">POST</button><br><br>
+</form>
+
+<script>
+    var editor = new FroalaEditor('#example')
+</script>
+{% endblock %}

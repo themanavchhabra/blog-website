@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ object.blogtitle }} {% endblock %}
+
+{% block body %}
+<!-- <link href="node_modules/froala-editor/css/froala_style.min.css" rel="stylesheet"/> -->
+<!-- <link href="../node_modules\froala-editor\css\froala_style.css" rel="stylesheet"/>
+<link href="../node_modules\froala-editor\css\froala_editor.pkgd.min.css" rel="stylesheet"/>
+<link href="../node_modules\froala-editor\css\froala_editor.pkgd.css" rel="stylesheet"/>
+<link href="../froala_editor/css/font-awesome.min.css" rel="stylesheet"/> -->
+
+{% load static %}
+
+<link href="{% static 'css/froala_style.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/froala_style.css' %}" rel="stylesheet" type="text/css">
+<!-- <link href="{% static 'css/froala_style.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/froala_style.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/froala_style.min.css' %}" rel="stylesheet" type="text/css"> -->
+
+
+<center><h2><u>{{ object.blogtitle }}</u></h2></center><br><br>
+<div class="text-muted h4">{{ object.blogname }} | {{ object.blogcreated_on }}</div><br><br>
+<div id="blogpostcontent" class="content">
+    <div>
+        {{ object.blogcontent }}
+    </div>
+</div>
+
+
+{% endblock %}
