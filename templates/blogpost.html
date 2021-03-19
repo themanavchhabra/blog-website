@@ -22,7 +22,7 @@
 <div class="text-muted h4">{{ object.blogname }} | {{ object.blogcreated_on }}</div><br><br>
 <div id="blogpostcontent" class="content">
     <div>
-        {{ object.blogcontent }}
+        {{ object.blogcontent|safe }}
     </div>
 </div>
 
